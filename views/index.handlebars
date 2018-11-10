@@ -1,0 +1,52 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Burger Time</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <p>This is where we will curate and display burgers ready to eat. When you devour your burger it will be moved to the  </p>
+        <ul>
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                <li>
+                    {{this.id}}
+                    {{this.burger_name}}
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button class="btn-danger" type="submit">Devour burger</button>
+                    </form>
+                </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <p>Finished Burgers</p>
+        {{#each burgers}}
+            {{#if devoured}}
+            <li>
+                {{this.id}}
+                {{this.burger_name}}
+            </li>
+            {{/if}}
+        {{/each}}
+    </div>
+    </div>
+    <!--- end row-->
+    
+    <!-- still working on the submit burger form!
+        <div class="row">
+        <div class="center col-md-12">
+            <p>Add a burger</p>
+
+        </div>
+    </div>
+      -->
+</div>
