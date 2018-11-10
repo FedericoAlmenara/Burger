@@ -13,6 +13,7 @@
         <div class="col-md-6">
         <p>This is where we will curate and display burgers ready to eat. When you devour your burger it will be moved to the  </p>
         <ul>
+            <!--handlebar objects containing the burgers-->
             {{#each burgers}}
                 {{#unless this.devoured}}
                 <li>
@@ -27,6 +28,7 @@
             {{/each}}
         </ul>
     </div>
+    <!--This is where the devoured burgers will go-->
     <div class="col-md-6">
         <p>Finished Burgers</p>
         {{#each burgers}}
@@ -40,12 +42,10 @@
     </div>
     </div>
     <!--- end row-->
-    
     <!-- still working on the submit burger form!
         <div class="row">
         <div class="center col-md-12">
             <p>Add a burger</p>
-
         </div>
     </div>
       -->
